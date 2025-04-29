@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>{{ project.title }}</h2>
+<p><strong>Description:</strong> {{ project.description }}</p>
+<p><strong>Submitted by:</strong> {{ project.submitted_by.username }}</p>
+<p><strong>Submitted at:</strong> {{ project.submitted_at }}</p>
+
+{% if project.file %}
+  <p><strong>Download Project (ZIP):</strong>
+    <a href="{{ project.file.url }}" target="_blank" class="btn btn-sm btn-success">View / Download</a>
+    
+{% else %}
+  <p><em>No project file uploaded.</em></p>
+  </p>
+ 
+
+{% endif %}
+
+
+<h4>Feedback</h4>
+<ul>
+  {% for feedback in feedbacks %}
+    <li>
+        <strong>{{ feedback.reviewer.username }}</strong>: 
+        {{ feedback.comment }}- <em>{{ feedback.rating }}/10</em>
+    </li>
+  {% empty %}
+    <li>No feedback yet.</li>
+  {% endfor %}
+</ul>
+
+<h4 class="mt-4">Leave Feedback</h4>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit" class="btn btn-primary">Submit Feedback</button>
+</form>
+
+
+{% endblock %}
