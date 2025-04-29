@@ -16,9 +16,9 @@ This web application was built by ARUNDHATI, a student of Electronics & Communic
 
  ## dependencies  
  - Django
- - Pillow (for file uploads)
+ - Python 3.8+
  - Bootstrap (CDN in templates)
- -SQLite (default DB)
+ - SQLite (default DB)
 
  ## How to Use
 -Register as a student
