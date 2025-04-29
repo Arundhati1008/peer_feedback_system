@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h2>Welcome, {{ user.username }}!</h2>
+  <div class="text-center mt-5">
+    <h1 class="display-4">Welcome to the Dashboard!</h1>
+    <p class="lead">Here you can view projects, feedback, and more.</p>
+
+    <hr class="my-4">
+
+    <div class="row justify-content-center">
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">Submit a Project</h5>
+            <p class="card-text">Easily submit your project for peer feedback.</p>
+            <a href="{% url 'submit_project' %}" class="btn btn-primary">Submit</a>
+            
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <h2 class="text-center mb-4">📊 Dashboard Overview</h2>
+
+<div class="row text-center">
+  <div class="col-md-4 mb-3">
+    <div class="card bg-primary text-white shadow">
+      <div class="card-body">
+
+        <h5 class="card-title">Total Projects</h5>
+        <p class="display-6">{{ user_projects.count }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-3">
+    <div class="card bg-success text-white shadow">
+      <div class="card-body">
+        <h5 class="card-title">Total Submissions</h5>
+        <p class="display-6">{{ user_projects.count}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-4 mb-3">
+    <div class="card bg-warning text-dark shadow">
+      <div class="card-body">
+        <h5 class="card-title">ALL Submissions</h5>
+        <p class="display-6">{{ user_projects }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h2>Your Submissions</h2>
+<ul>
+  {% for project in user_projects %}
+    <li>
+        {{ project.title }} - {{ project.description }}
+        <a href="{% url 'project_detail' project.id %}" class="btn btn-sm btn-info">View / Feedback</a>  
+    </li>
+  {% empty %}
+    <li>No submissions yet.</li>
+  {% endfor %}
+</ul>
+<hr>
+<h3>📂 Projects from Other Students</h3>
+<ul>
+  {% for project in other_projects %}
+    <li>
+      <strong>{{ project.title }}</strong> - {{ project.description }} <br>
+      Submitted by: {{ project.submitted_by.username }}
+      <a href="{% url 'project_detail' project.id %}" class="btn btn-sm btn-info">Give Feedback</a>
+    </li>
+  {% empty %}
+    <li>No other projects available for feedback yet.</li>
+  {% endfor %}
+</ul>
+
+
+
+
+
+
+{% endblock %}
+
