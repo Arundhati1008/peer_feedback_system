@@ -1,6 +1,6 @@
 # Peer Feedback System for College 🎓
 A Django based web application that allows students to submit their projects and receive feedback.Admin can review submissions and track analytics.
-This web application was built by ARUNDHATI, a student of Electronics & Communication Engineering, for managing peer project reviews within a college environment.
+
 
 ## setup instructions
 Make sure you have Python and pip installed. Then run:
