@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+  <h2>Other Students' Projects</h2>
+  <ul>
+    {% for project in projects %}
+      <li>
+        <strong>{{ project.title }}</strong> - {{ project.description }} <br>
+        Submitted by: {{ project.submitted_by.username }}
+        <a href="{% url 'project_detail' project.id %}" class="btn btn-sm btn-info">Give Feedback</a>
+      </li>
+    {% empty %}
+      <li>No other projects to review yet.</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
+<a href="{% url 'project_list' %}" class="nav-link">🔍 Review Peers</a>
