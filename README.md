@@ -8,7 +8,7 @@ This web application was built by ARUNDHATI, a student of Electronics & Communic
 - Admin dashboard with stats
 - User login/registration
 - Access restricted to logged-in users
-- 
+
 ## Technologies
 - Python & Django
 - HTML, CSS (Bootstrap)
