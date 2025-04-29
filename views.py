@@ -21,7 +21,7 @@ def submit_project(request):
             project = form.save(commit=False)
             project.submitted_by = request.user
             project.save()
-            messages.success(request, "✅ Your project has been submitted!")  # ✅ Correct
+            messages.success(request, "✅ Your project has been submitted!") 
 
             return redirect('dashboard')
     else:
