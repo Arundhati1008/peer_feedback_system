@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<section class="py-5 text-white bg-dark text-center">
+  <div class="container">
+    <h1 class="display-4"><i class="fas fa-graduation-cap"></i> Peer Feedback System</h1>
+    <p class="lead">Submit projects. Get peer reviews. Improve collaboratively.</p>
+    
+      {% if user.is_authenticated %}
+        <a href="{% url 'dashboard' %}" class="btn btn-success btn-lg">Go to Dashboard</a>
+      {% else %}
+        <a href="{% url 'login' %}" class="btn btn-primary btn-lg mx-2">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-outline-secondary btn-lg mx-2">Register</a>
+      {% endif %}
+   
+  </div>
+  </div>
+</div>
+</section>
+    
+</header>
+
+<section class="py-5 bg-white">
+  <div class="container text-center">
+    <h2 class="mb-4">📌 How It Works</h2>
+    <div class="row">
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <span>1</span>
+            <h5 class="card-title">1️⃣ Submit Project</h5>
+            <p class="card-text">Upload your project with title & file to share with peers.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <span>2</span>
+            <h5 class="card-title">2️⃣ Peer Reviews</h5>
+            <p class="card-text">Your peers can view and provide feedback or rating.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <span>3</span>
+            <h5 class="card-title">3️⃣ Track Dashboard</h5>
+            <p class="card-text">See stats, total submissions, and feedback history.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
