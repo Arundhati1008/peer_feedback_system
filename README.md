@@ -5,12 +5,12 @@ This web application was built by ARUNDHATI, a student of Electronics & Communic
 ## setup instructions
 Make sure you have Python and pip installed. Then run:
 
-```bash
-git clone https://github.com/Arundhati1008/peer_feedback_system.git
-cd peer_feedback_system
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
+bash
+-git clone https://github.com/Arundhati1008/peer_feedback_system.git
+-cd peer_feedback_system
+-pip install -r requirements.txt
+-python manage.py migrate
+-python manage.py runserver.
 
 ## Features
 - Project submission by students
