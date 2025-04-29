@@ -3,11 +3,11 @@ A Django based web application that allows students to submit their projects and
 
 ## Screenshots
 
+[Login Page](https://github.com/Arundhati1008/peer_feedback_system/blob/main/Screenshot%20(27)(1).png)
 
-![Login Page](images/login%20page/Screenshot%20(27)(1).png)
-![Dashboard](images/dashboard/Screenshot%20(28)(1).png)
-![Submission Page](images/submission%20page/Screenshot%20(30)(1).png)
+[Dashboard](https://github.com/Arundhati1008/peer_feedback_system/blob/main/Screenshot%20(28)(1).png)
 
+[Submission Page](https://github.com/Arundhati1008/peer_feedback_system/blob/main/Screenshot%20(30)(1).png)
 
 ## setup instructions
 Make sure you have Python and pip installed. Then run:
